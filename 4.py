@@ -21,18 +21,18 @@ try:
         kolvo_exponatov = int(input())
         #Считаем общее время
         time_potracheno_minut = kolvo_exponatov * 5
-        #Считаем сколько лет
-        kolvo_let = math.floor(time_potracheno_minut / 60 / 24 / 365)
+        #Считаем сколько лет c учётом того, что в день мы тратим только 8 часов
+        kolvo_let = math.floor(time_potracheno_minut / 60 / 8 / 365)
         #Считаем остаток в минутах с учётом високосных лет
-        ostatok = (time_potracheno_minut - kolvo_let * 60 * 24 * 365) - (math.floor(kolvo_let / 4)) * 60 * 24
+        ostatok = (time_potracheno_minut - kolvo_let * 60 * 8 * 365) - (math.floor(kolvo_let / 4)) * 60 * 8
         #Считаем сколько месяцев
-        kolvo_months = math.floor(ostatok / 60 / 24 / 30)
+        kolvo_months = math.floor(ostatok / 60 / 8 / 30)
         #Считаем остаток в минутах
-        ostatok = ostatok - kolvo_months * 60 * 24 * 30
+        ostatok = ostatok - kolvo_months * 60 * 8 * 30
         #Считаем сколько дней
-        kolvo_days = math.floor(ostatok / 60 / 24)
+        kolvo_days = math.floor(ostatok / 60 / 8)
         #Считаем остаток в минутах
-        ostatok = ostatok - kolvo_days * 60 * 24
+        ostatok = ostatok - kolvo_days * 60 * 8
         #Считаем сколько часов
         kolvo_hours = math.floor(ostatok / 60)
         #Считаем остаток в минутах
